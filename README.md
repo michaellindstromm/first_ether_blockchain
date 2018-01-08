@@ -9,7 +9,7 @@
 git clone https://github.com/michaellindstromm/first_ether_blockchain.git
 ```
 
-2. Start a local server and take note of the port
+2. Start a local server and take note of the port ie. ```8081```
 
 3. Run the following command
 ```
