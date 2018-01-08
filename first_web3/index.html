@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>myDapp</title>
+    <script src="web3.js/dist/web3.min.js"></script>
+    <script>
+
+        // if (typeof web3 !== 'undefined') {
+        //     web3 = new Web3(web3.currentProvider);
+        // } else {
+        //     web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+        // }
+
+        web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+
+        function getBalance() {
+            web3.eth.getBalance(web3.eth.accounts[0], function(e, d) {
+                document.getElementById("myBalance").innerText = web3.fromWei(d, "ether");
+            });
+        }
+
+    </script>
+</head>
+<body>
+    <h1>This is my balance.</h1>
+    <button onclick="getBalance()">Update Balance</button>
+    <span id="myBalance"></span> in Ether
+</body>
+</html>
